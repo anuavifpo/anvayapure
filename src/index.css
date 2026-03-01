@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm cream/beige palette for AnvayaPure */
+    --background: 40 33% 97%;
+    --foreground: 20 14% 15%;
+
+    --card: 40 30% 95%;
+    --card-foreground: 20 14% 15%;
+
+    --popover: 40 33% 97%;
+    --popover-foreground: 20 14% 15%;
+
+    /* Deep terracotta - warm, inviting CTA color */
+    --primary: 24 44% 50%;
+    --primary-foreground: 40 33% 97%;
+
+    /* Muted sage green - trust, organic feel */
+    --secondary: 95 18% 55%;
+    --secondary-foreground: 20 14% 15%;
+
+    /* Sand/beige muted surfaces */
+    --muted: 36 25% 90%;
+    --muted-foreground: 20 10% 40%;
+
+    /* Warm accent for highlights */
+    --accent: 36 40% 85%;
+    --accent-foreground: 20 14% 15%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 33% 97%;
+
+    --border: 36 20% 85%;
+    --input: 36 20% 85%;
+    --ring: 24 44% 50%;
+
+    --radius: 0.375rem;
+
+    /* Custom tokens */
+    --cream: 40 33% 97%;
+    --sand: 36 30% 88%;
+    --sage: 95 18% 55%;
+    --sage-dark: 95 20% 40%;
+    --terracotta: 24 44% 50%;
+    --terracotta-dark: 24 50% 40%;
+    --clay: 20 35% 35%;
+    --charcoal: 20 14% 15%;
+
+    /* Typography */
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+
+    /* Spacing */
+    --section-padding: 5rem;
+    --container-max: 1280px;
+
+    /* Sidebar defaults */
+    --sidebar-background: 40 30% 95%;
+    --sidebar-foreground: 20 14% 15%;
+    --sidebar-primary: 24 44% 50%;
+    --sidebar-primary-foreground: 40 33% 97%;
+    --sidebar-accent: 36 40% 85%;
+    --sidebar-accent-foreground: 20 14% 15%;
+    --sidebar-border: 36 20% 85%;
+    --sidebar-ring: 24 44% 50%;
+  }
+
+  .dark {
+    --background: 20 14% 10%;
+    --foreground: 40 20% 92%;
+
+    --card: 20 12% 14%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 20 14% 10%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 24 50% 55%;
+    --primary-foreground: 20 14% 10%;
+
+    --secondary: 95 15% 35%;
+    --secondary-foreground: 40 20% 92%;
+
+    --muted: 20 10% 20%;
+    --muted-foreground: 40 15% 65%;
+
+    --accent: 24 30% 25%;
+    --accent-foreground: 40 20% 92%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 40 20% 92%;
+
+    --border: 20 10% 25%;
+    --input: 20 10% 25%;
+    --ring: 24 50% 55%;
+
+    --cream: 20 14% 10%;
+    --sand: 20 10% 18%;
+    --sage: 95 12% 35%;
+    --sage-dark: 95 15% 25%;
+    --terracotta: 24 50% 55%;
+    --terracotta-dark: 24 55% 45%;
+    --clay: 20 20% 60%;
+    --charcoal: 40 20% 92%;
+
+    --sidebar-background: 20 12% 14%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 24 50% 55%;
+    --sidebar-primary-foreground: 20 14% 10%;
+    --sidebar-accent: 24 30% 25%;
+    --sidebar-accent-foreground: 40 20% 92%;
+    --sidebar-border: 20 10% 25%;
+    --sidebar-ring: 24 50% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer components {
+  .container-narrow {
+    @apply max-w-5xl mx-auto px-6;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-6;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .prose-brand {
+    @apply text-foreground/80 leading-relaxed;
+  }
+
+  .link-underline {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 
+           after:h-px after:bottom-0 after:left-0 after:bg-current 
+           after:origin-bottom-right after:transition-transform after:duration-300 
+           hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 
+           bg-primary text-primary-foreground font-sans font-medium text-sm tracking-wide
+           rounded transition-all duration-300
+           hover:bg-terracotta-dark hover:shadow-lg
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-3 
+           bg-transparent text-foreground font-sans font-medium text-sm tracking-wide
+           border border-foreground/20 rounded transition-all duration-300
+           hover:bg-foreground hover:text-background
+           focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-6 py-2
+           bg-transparent text-foreground font-sans font-medium text-sm tracking-wide
+           transition-colors duration-300
+           hover:text-primary
+           focus:outline-none;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .image-container {
+    @apply relative overflow-hidden bg-muted;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+}
+
+@layer utilities {
+  .bg-cream {
+    background-color: hsl(var(--cream));
+  }
+
+  .bg-sand {
+    background-color: hsl(var(--sand));
+  }
+
+  .bg-sage {
+    background-color: hsl(var(--sage));
+  }
+
+  .bg-terracotta {
+    background-color: hsl(var(--terracotta));
+  }
+
+  .bg-terracotta-dark {
+    background-color: hsl(var(--terracotta-dark));
+  }
+
+  .text-sage {
+    color: hsl(var(--sage-dark));
+  }
+
+  .text-terracotta {
+    color: hsl(var(--terracotta));
+  }
+
+  .text-clay {
+    color: hsl(var(--clay));
+  }
+
+  .text-charcoal {
+    color: hsl(var(--charcoal));
+  }
+
+  .border-sand {
+    border-color: hsl(var(--sand));
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
