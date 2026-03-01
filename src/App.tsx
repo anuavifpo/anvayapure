@@ -27,7 +27,7 @@ const App = () => (
       <CartProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename="/anvayapure">
           <Routes>
             <Route path="/" element={<CinematicIndex />} />
             <Route path="/ghee" element={<GheePage />} />
