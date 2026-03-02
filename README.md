@@ -1,18 +1,12 @@
-# Welcome to your Lovable project
+# Anvaya Pure
 
-## Project info
+A modern e-commerce website for traditional Bilona Ghee and Cold-Pressed Mustard Oil.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Live Demo
+
+**GitHub Pages**: https://anuavifpo.github.io/anvayapure/
 
 ## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
@@ -62,12 +56,8 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+This project is automatically deployed to GitHub Pages using GitHub Actions.
 
-## Can I connect a custom domain to my Lovable project?
+Every push to the `master` branch triggers an automatic build and deployment.
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+The site is available at: https://anuavifpo.github.io/anvayapure/
